@@ -3,7 +3,7 @@
 		$db_config = array();
 		$db_config['SGBD']	= 'mysql';
 		$db_config['HOST']	= 'localhost';
-		$db_config['DB_NAME']	= 'contact';
+		$db_config['DB_NAME']	= 'dovapi';
 		$db_config['USER']	= 'root';
 		$db_config['PASSWORD']	= '';
 		$db_config['OPTIONS']	= array(
