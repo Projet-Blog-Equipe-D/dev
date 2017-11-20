@@ -6,10 +6,10 @@
 		private $_pseudo;
 		
 		public function __construct($donnees){
-			$this->_userId = $donnees[0];
-			$this->_mail = $donnees[1];
-			$this->_password = $donnees[2];
-			$this->_pseudo = $donnees[3];
+			$this->_userId = $donnees['id_user'];
+			$this->_mail = $donnees['mail'];
+			$this->_password = $donnees['password'];
+			$this->_pseudo = $donnees['name'];
 		}
 	
 

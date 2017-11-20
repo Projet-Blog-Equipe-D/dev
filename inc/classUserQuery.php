@@ -15,9 +15,10 @@
 				
 				if ($donnees != false){
 					$user = new ClassUser($donnees);
+					$_SESSION["user"] = $user;
 					return $user;
-					$_SESSION["userID"] = $donnees[0];
 				}
+				return false;
 		}
 
 		public function deconnexion(){

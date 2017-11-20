@@ -1,4 +1,6 @@
 <?php 
+	include_once "inc/classUser.php";;
+	include_once "inc/classUserQuery.php";
 	session_start();
 	include_once "inc/pdo.php";
 ?>
