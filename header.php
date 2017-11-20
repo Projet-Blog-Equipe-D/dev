@@ -1,4 +1,6 @@
 <?php 
+	include_once "inc/classUser.php";;
+	include_once "inc/classUserQuery.php";
 	session_start();
 	include_once "inc/pdo.php";
 ?>
@@ -11,8 +13,9 @@
 		
 		<!-- Importation BootStrap 3 -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
-	
+		
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		
 		
 		<!-- Importation de jQuery -->
 		<script src="js/jquery-3.2.1.min.js"></script>
