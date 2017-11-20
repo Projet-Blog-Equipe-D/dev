@@ -31,3 +31,32 @@ ol, ul {
 .navbar ul{
 	list-style: none;
 }
+
+/* *** Connexion *** */
+#logination{
+	max-width: 50%;
+	margin: auto;
+	padding: 5%;
+	background-color: #201C1D;
+}
+#logination p{
+	margin-bottom: 25px;
+}
+#logination input{
+	color: #000000;
+	padding: 0 0 0 10px;
+}
+#logination input:focus { 
+    outline: none !important;
+    border: 2px solid #AA1819;
+    box-shadow: 0 0 10px #AA1819;
+}
+#logination input,
+#logination .btn-login{
+	font-size: 24px;
+}
+.btn-login{
+	border-radius: 5px;
+	background-color: #AA1819;
+	color: #FFFFFF;
+}
