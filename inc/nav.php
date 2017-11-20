@@ -19,7 +19,7 @@
 						echo '<li><a href="login.php">CONNEXION</a></li>';
 					}
 					else{
-						echo '<li><a href="login.php">DECONNEXION</a></li>';
+						echo '<li><a href="controleurs/deconnexion.php">DECONNEXION</a></li>';
 					}
 				?>
 			</ul>
