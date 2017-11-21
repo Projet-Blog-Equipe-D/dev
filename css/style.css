@@ -107,6 +107,20 @@ main .container-fluid
 	margin-bottom: 3%;
 }
 
+/*#content-btn
+{
+	width: 10%;
+	float: right;
+}*/
+
+.bouton-lire
+{
+	color: #111;
+	background: #AA1819;
+	font-weight: bold;
+	display: block;
+}
+
 @media screen and (max-width: 720px)
 {
 	main .container-fluid
