@@ -64,8 +64,17 @@ ol, ul{
 }
 
 /* *** Connexion *** */
+@media screen and (max-width: 1024px){
+	#logination{
+		max-width: 100%;
+	}
+}
+@media screen and (min-width: 1024px){
+	#logination{
+		max-width: 50%;
+	}
+}
 #logination{
-	max-width: 50%;
 	margin: auto;
 	padding: 5%;
 	background-color: #201C1D;
