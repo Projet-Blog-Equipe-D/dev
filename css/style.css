@@ -15,6 +15,10 @@ img
 	max-width: 100%;
 }
 
+select{
+	background-color: #393534;
+}
+
 ol, ul{
 	margin-left: 0;
 	padding: 0;
