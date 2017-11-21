@@ -1,10 +1,13 @@
 <?php 
-include_once "header.php";
-
+	include_once "header.php";
 ?>
 
 	<body lang="fr">
-
+		<header>
+			<?php 
+				include_once "inc/nav.php";
+			?>
+		</header>
 		<main>
 		<?php
 		$titre = "TEST";
