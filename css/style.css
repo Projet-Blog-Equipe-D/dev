@@ -77,6 +77,7 @@ ol, ul{
 	margin-bottom: 25px;
 }
 #logination input{
+	max-width: 100%;
 	color: #000000;
 	padding: 0 0 0 10px;
 }
