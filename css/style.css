@@ -7,6 +7,7 @@ body{
 	color: #FFFFFF;
 	background-color: #393534;
 	box-sizing: border-box;
+	padding: 3%;
 }
 
 img
@@ -64,16 +65,17 @@ ol, ul{
 }
 
 /* *** Connexion *** */
-@media screen and (max-width: 1024px){
-	#logination{
-		max-width: 100%;
-	}
-}
 @media screen and (min-width: 1024px){
 	#logination{
 		max-width: 50%;
 	}
 }
+@media screen and (max-width: 1024px){
+	#logination{
+		max-width: 100%;
+	}
+}
+
 #logination{
 	margin: auto;
 	padding: 5%;
@@ -114,11 +116,6 @@ ol, ul{
 
 
 /*CSS ARTICLE*/
-
-body
-{
-	padding: 3%;
-}
 
 main .container-fluid
 {
