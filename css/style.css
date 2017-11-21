@@ -9,6 +9,11 @@ body{
 	box-sizing: border-box;
 }
 
+img
+{
+	max-width: 100%;
+}
+
 ol, ul{
 	margin-left: 0;
 	padding: 0;
@@ -16,8 +21,9 @@ ol, ul{
 
 @media screen and (min-width: 1024px){
 	ol, ul {
-		margin-top: 2%;
+		margin-top: 0;
 		margin-bottom: 0;
+		padding: 0.8% 0 0 0;
 	}
 }
 @media screen and (max-width: 1024px){
@@ -30,7 +36,7 @@ ol, ul{
 /* *** Header *** */
 .navbar-default {
 	color: #FFFFFF;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.3);
     border-color: transparent;
 }
 .navbar-default a,
@@ -42,11 +48,6 @@ ol, ul{
 	list-style: none;
 }
 
-@media screen and (min-width: 1024px){
-	.navbar{
-		margin: 2% 20%;
-	}
-}
 @media screen and (max-width: 1024px){
 	.navbar-right,
 	.navbar-left{
@@ -89,4 +90,19 @@ ol, ul{
 	border-radius: 5px;
 	background-color: #AA1819;
 	color: #FFFFFF;
+}
+
+
+/*CSS ARTICLE*/
+
+body
+{
+	padding: 3%;
+}
+
+main .container-fluid
+{
+	padding: 1%;
+	background: rgba(0,0,0,.3);
+	margin-bottom: 3%;
 }

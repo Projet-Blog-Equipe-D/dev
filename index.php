@@ -3,12 +3,13 @@
 ?>
 
 	<body lang="fr">
+		
 		<header>
 			<?php 
 				include_once "inc/nav.php";
 			?>
 		</header>
-		<main>
+
 		<?php
 		$titre = "TEST";
 		if(!empty($_GET)) {
@@ -19,8 +20,6 @@
 			require_once('./vues/liste.php');
 		}
 		?> 
-
-		</main>
 
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
