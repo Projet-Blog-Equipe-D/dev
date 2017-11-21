@@ -26,5 +26,19 @@
 			session_unset();
 			header('Location: ../index.php');
 		}
+		
+		public function inscription($donnees){
+			$req = $this->_bdd->prepare("INSERT INTO `users` (mail, password, name) VALUES(:mail, :password, :name)");
+			$req->bindParam(':mail', $donnees[0]);
+			$req->bindParam(':password', $donnees[1]);
+			$req->bindParam(':name', $donnees[2]);
+			var_dump($donnees);
+			if ($req->execute()){
+				return true ;
+			}
+			else{
+				return false ;
+			}
+		}
 	}
 ?>

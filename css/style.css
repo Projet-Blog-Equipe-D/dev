@@ -70,6 +70,9 @@ ol, ul{
 	padding: 5%;
 	background-color: #201C1D;
 }
+#logination form{
+	margin-bottom: 25px;
+}
 #logination p{
 	margin-bottom: 25px;
 }
@@ -90,6 +93,13 @@ ol, ul{
 	border-radius: 5px;
 	background-color: #AA1819;
 	color: #FFFFFF;
+}
+
+#logination a{
+	color: #AA1819;
+}
+#logination a:hover{
+	color: #D46A6A;
 }
 
 
