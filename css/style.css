@@ -8,16 +8,26 @@ body{
 	background-color: #393534;
 	box-sizing: border-box;
 }
-ol, ul {
-    margin-top: 2%;
-    margin-bottom: 0;
+
+ol, ul{
+	margin-left: 0;
+	padding: 0;
+}
+
+@media screen and (min-width: 1024px){
+	ol, ul {
+		margin-top: 2%;
+		margin-bottom: 0;
+	}
+}
+@media screen and (max-width: 1024px){
+	ol, ul {
+		margin-top: 2%;
+		margin-bottom: 2%;
+	}
 }
 
 /* *** Header *** */
-
-.navbar{
-	margin: 2% 20%;
-}
 .navbar-default {
 	color: #FFFFFF;
     background-color: rgba(0,0,0,0.5);
@@ -30,6 +40,26 @@ ol, ul {
 }
 .navbar ul{
 	list-style: none;
+}
+
+@media screen and (min-width: 1024px){
+	.navbar{
+		margin: 2% 20%;
+	}
+}
+@media screen and (max-width: 1024px){
+	.navbar-right,
+	.navbar-left{
+		text-align: center;
+	}
+	.navbar-default .navbar-collapse, 
+	.navbar-default .navbar-form{
+		border: none;
+		text-align: center;
+	}
+	.navbar-default .navbar-form{
+		box-shadow: none;
+	}
 }
 
 /* *** Connexion *** */
