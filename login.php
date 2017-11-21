@@ -1,5 +1,8 @@
 <?php 
 	include_once "header.php";
+	if (isset($_SESSION['user'])){
+		header('Location: index.php');;
+	} 
  ?>
 
 	<body>
@@ -10,7 +13,6 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12 text-center">
-				<h1> <?php if (isset($_SESSION['user'])){var_dump($_SESSION["user"]->getMail());}  ?></h1>
 					<div id="logination">
 						<form method="POST" action="controleurs/connexion.php">
 							<p>
@@ -29,9 +31,5 @@
 				</div>
 			</div>		
 		</div>
-
-
-
-		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>
