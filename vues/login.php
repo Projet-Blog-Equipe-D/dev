@@ -28,9 +28,8 @@
 	} 
  ?>
 
-	<body>
-		
-		<div class="container-fluid">
+	<body class="nopad">
+		<div class="container-fluid vertical-center">
 			<div class="row">
 				<div class="col-md-12 text-center">
 					<div id="logination">
