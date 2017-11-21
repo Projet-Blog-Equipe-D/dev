@@ -22,15 +22,15 @@
 		<script src="../js/bootstrap.min.js"></script>
 	</head>
 
-	<body>
+	<body class="nopad">
 		<header>
 		</header>
 		
-		<div class="container-fluid">
+		<div class="container-fluid vertical-center">
 			<div class="row">
 				<div class="col-md-12 text-center">
 				<h1> <?php if (isset($_SESSION['user'])){var_dump($_SESSION["user"]->getMail());}  ?></h1>
-					<div id="logination">
+					<div id="logination" class="">
 						<form method="POST" action="../controleurs/nouvuser.php">
 							<p>
 								<input type="text" name="pseudo" id="pseudo" placeholder="Pseudo" >
