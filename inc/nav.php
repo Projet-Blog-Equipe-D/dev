@@ -16,10 +16,12 @@
 			<ul class="navbar-right">
 				<?php
 					if (!isset($_SESSION['user'])){
-						echo '<li><a href="vues/login.php">CONNEXION</a></li>';
+						echo '<a href="vues/login.php"><li><i class="fa fa-sign-in" aria-hidden="true"></i>
+CONNEXION</li></a>';
 					}
 					else{
-						echo '<li><a href="controleurs/deconnexion.php">DECONNEXION</a></li>';
+						echo '<a href="controleurs/deconnexion.php"><li><i class="fa fa-sign-out" aria-hidden="true"></i>
+							DECONNEXION</li></a>';
 					}
 				?>
 			</ul>
