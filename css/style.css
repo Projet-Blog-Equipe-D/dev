@@ -116,3 +116,33 @@ main .container-fluid
 	background: rgba(0,0,0,.3);
 	margin-bottom: 3%;
 }
+
+/*#content-btn
+{
+	width: 10%;
+	float: right;
+}*/
+
+.bouton-lire
+{
+	color: #111;
+	background: #AA1819;
+	font-weight: bold;
+	display: block;
+}
+
+@media screen and (max-width: 720px)
+{
+	main .container-fluid
+	{
+		padding: 10%;
+	}
+}
+
+@media screen and (min-width: 721px) and (max-width: 1024px)
+{
+	main .container-fluid
+	{
+		padding: 5%;
+	}
+}

@@ -3,19 +3,34 @@
 		foreach ($liste as $art) {
 			echo "<section class='container-fluid'>";
 				echo "<div class='row'>";
+
 					echo "<div class='col-md-2 col-xs-12 col-lg-2 col-sm-12 text-center'>";
 						echo "<img src='http://via.placeholder.com/180x150' alt='Image article'>";
 					echo "</div>";
+
 					echo "<div class='col-md-10 col-xs-12 col-lg-10 col-sm-12'>";
 						// echo "<h1>".$titre."</h1>";
 						echo '<article class="article" id="article-'.$art->getIdArticle().'">';
 							// echo $art->getIdArticle();
 							echo utf8_encode("<h2>".$art->getTitre()."</h2>");
-							echo utf8_encode($art->getContenu());
+							echo utf8_encode("<p>".$art->getContenu()."</p>");
 						echo "</article>";
+
 					echo "</div>";
+
+				echo "</div>";
+
+				echo "<div class'row'>";
+
+					echo "<div class='col-md-12 col-xs-12 col-lg-12 col-sm-12'>";
+						echo "<div id='content-btn'>";
+						echo "<button class='btn bouton-lire pull-right'>"."Lire la suite"."</button>";
+					echo "</div>";
+
+				echo "</div>";
+
 			echo "</section>";
 		}
 
 	?>
-</main>
+</main> 
