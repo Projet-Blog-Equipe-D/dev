@@ -16,7 +16,7 @@
 			<ul class="navbar-right">
 				<?php
 					if (!isset($_SESSION['user'])){
-						echo '<li><a href="login.php">CONNEXION</a></li>';
+						echo '<li><a href="vues/login.php">CONNEXION</a></li>';
 					}
 					else{
 						echo '<li><a href="controleurs/deconnexion.php">DECONNEXION</a></li>';

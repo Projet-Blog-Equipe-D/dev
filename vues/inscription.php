@@ -1,6 +1,26 @@
 <?php 
-	include_once "header.php";
- ?>
+	include_once "../inc/classUser.php";;
+	include_once "../inc/classUserQuery.php";
+	session_start();
+	include_once "../inc/pdo.php";
+?>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Importation BootStrap 3 -->
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+		
+		
+		<!-- Importation de jQuery -->
+		<script src="../js/jquery-3.2.1.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+	</head>
 
 	<body>
 		<header>
@@ -11,7 +31,7 @@
 				<div class="col-md-12 text-center">
 				<h1> <?php if (isset($_SESSION['user'])){var_dump($_SESSION["user"]->getMail());}  ?></h1>
 					<div id="logination">
-						<form method="POST" action="controleurs/nouvuser.php">
+						<form method="POST" action="../controleurs/nouvuser.php">
 							<p>
 								<input type="text" name="pseudo" id="pseudo" placeholder="Pseudo" >
 							</p>
@@ -32,6 +52,6 @@
 		</div>
 
 
-		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="../js/main.js"></script>
 	</body>
 </html>
