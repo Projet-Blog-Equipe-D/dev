@@ -23,7 +23,6 @@
 				echo "<div class'row'>";
 
 					echo "<div class='col-md-12 col-xs-12 col-lg-12 col-sm-12'>";
-						echo "<div id='content-btn'>";
 						echo '<a href="vues/viewarticle.php?id='.$art->getIdArticle().'">'.'<button class="btn bouton-lire pull-right">Lire la suite</button>'.'</a>';
 					echo "</div>";
 

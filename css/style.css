@@ -130,6 +130,13 @@ main .container-fluid
 	background: #AA1819;
 	font-weight: bold;
 	display: block;
+	transition: all ease-in-out .3s;
+}
+
+.bouton-lire:hover
+{
+	color: #222;
+	box-shadow: 2px 2px 2px 2px rgba(0,0,0,.3);
 }
 
 @media screen and (max-width: 720px)
