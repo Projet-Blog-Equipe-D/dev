@@ -7,21 +7,28 @@
 			</button>
 		</div> 
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse"> 
-			<form class="navbar-form navbar-left">
-				<div class="form-group">
-					<!-- Menu selection dynamique (catégories) en php -->
-				</div> 
-				<button type="submit" class="btn btn-default">Filtrer</button>
-			</form>
+			<div class="navbar-left">
+				<?php 
+					require_once "inc/classcategorie.php";
+					require_once "inc/classcategoriequery.php";
+					$choux = new categorieQuery($bdd);
+					$categs = $choux->getList();
+					echo "<select name='choix' id='choix'>";
+					echo "<option value='tout'>Tout</option>";
+					foreach ($categs as $value) {
+						var_dump($value);	
+						echo "<option value=".$value['id_categorie'].">".$value['nom']."</option>";
+					}
+					echo"</select>";
+				?>
+			</div>
 			<ul class="navbar-right">
 				<?php
 					if (!isset($_SESSION['user'])){
-						echo '<a href="vues/login.php"><li><i class="fa fa-sign-in" aria-hidden="true"></i>
-CONNEXION</li></a>';
+						echo '<a href="vues/login.php"><li><i class="fa fa-sign-in" aria-hidden="true"></i>CONNEXION</li></a>';
 					}
 					else{
-						echo '<a href="controleurs/deconnexion.php"><li><i class="fa fa-sign-out" aria-hidden="true"></i>
-							DECONNEXION</li></a>';
+						echo '<a href="controleurs/deconnexion.php"><li><i class="fa fa-sign-out" aria-hidden="true"></i>DECONNEXION</li></a>';
 					}
 				?>
 			</ul>
