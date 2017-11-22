@@ -38,7 +38,7 @@
 			$donnees[] = utf8_decode(ucfirst(htmlspecialchars($_POST['pseudo'])));
 		}
 		if (!empty($donnees)){
-			$jean = new ClassUserQuery($pdo);
+			$jean = new ClassUserQuery($bdd);
 			if ($jean->inscription($donnees)){
 				header('Location: ../vues/login.php');
 			}

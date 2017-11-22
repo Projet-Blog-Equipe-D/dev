@@ -27,7 +27,7 @@
 <main>
 	<?php
 
-		$aq = new ArticleQuery($pdo);
+		$aq = new ArticleQuery($bdd);
 		$liste = $aq->getArticle($_GET['id']);
 
 		echo "<section class='container-fluid'>";

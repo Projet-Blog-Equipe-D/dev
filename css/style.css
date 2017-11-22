@@ -76,6 +76,13 @@ ol, ul{
 	padding: 5%;
 	background-color: #201C1D;
 }
+
+#logination,
+#logination form,
+#logination p,
+#logination input{
+	transition: all 0.5s ease;
+}
 #logination form{
 	margin-bottom: 25px;
 }

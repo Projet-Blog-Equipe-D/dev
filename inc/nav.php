@@ -11,10 +11,11 @@
 				<?php 
 					require_once "inc/classcategorie.php";
 					require_once "inc/classcategoriequery.php";
-					$choux = new categorieQuery($pdo);
-					$zoubida = $choux->getList();
-					echo "<select name='choix'>";
-					foreach ($zoubida as $value) {
+					$choux = new categorieQuery($bdd);
+					$categs = $choux->getList();
+					echo "<select name='choix' id='choix'>";
+					echo "<option value='tout'>Tout</option>";
+					foreach ($categs as $value) {
 						var_dump($value);	
 						echo "<option value=".$value['id_categorie'].">".$value['nom']."</option>";
 					}

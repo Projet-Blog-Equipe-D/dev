@@ -1,12 +1,12 @@
 <?php
 class categorieQuery{
-	private $_pdo;
-	public function __construct(PDO $pdo){
-		$this->_pdo=$pdo;
+	private $_bdd;
+	public function __construct($bdd){
+		$this->_bdd=$bdd;
 	}
 	public function getList(){
 		$tab = [];
-		$reponse=$this->_pdo->prepare('SELECT * FROM categories');
+		$reponse=$this->_bdd->prepare('SELECT * FROM categories');
 		$reponse->execute();
 		while($donnees = $reponse->fetch()){
 			
