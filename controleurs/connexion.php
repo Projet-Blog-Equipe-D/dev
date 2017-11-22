@@ -26,11 +26,13 @@
 
 	
 	if (!empty($_POST)){
+		unset($_SESSION['loginErr']);
 		$michel = new ClassUserQuery($bdd);
 		if ($michel->connexion($_POST['login'],$_POST['password'])){
 			header('Location: ../index.php');
 		}
 		else{
+			$_SESSION['loginErr'] = "Combinaison mot de passe - login incorrecte.";
 			header('Location: ../vues/login.php');
 		}
 	}
