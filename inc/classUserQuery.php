@@ -17,8 +17,22 @@
 					$user = new ClassUser($donnees);
 					$_SESSION["user"] = $user;
 					return $user;
+				}else{
+					$req = $this->_bdd->prepare('SELECT * FROM users WHERE name = :name AND password = :password');
+					$req->execute(array(
+						'name' => $mail,
+						'password' => $password));
+					$donnees = $req->fetch();
+					if ($donnees != false){
+						$user = new ClassUser($donnees);
+						$_SESSION["user"] = $user;
+						return $user;
+					}
+					else{
+						return false;
+					}
 				}
-				return false;
+				
 		}
 
 		public function deconnexion(){
