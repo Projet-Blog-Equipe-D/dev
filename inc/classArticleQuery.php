@@ -29,12 +29,8 @@
 
 		public function modifierArticle(Article $article)
 		{
-<<<<<<< HEAD
 
 			$q = $this->_bdd->prepare('UPDATE articles SET titre = :titre, contenu = :contenu WHERE id_article ='.$article->getIdArticle());
-=======
-			$q = $this->_bdd->prepare('UPDATE articles SET titre = :titre, contenu = :contenu, auteur = :auteur, categorie = :categorie');
->>>>>>> 0b481bdd4a1f1dd81049c006c5e88b7597f504b3
 
 			$q->bindValue(':titre', $article->getTitre());
 		    $q->bindValue(':contenu', $article->getContenu());
@@ -46,15 +42,14 @@
 		public function supprArticle(Article $article)
 		{
 			$q = $this->_bdd->prepare('DELETE FROM articles WHERE id_article = '.$article->getIdArticle());
-<<<<<<< HEAD
+
 
 			if ($q->execute()) {
 				return true;
 			} else {
 				return false;
 			}
-=======
->>>>>>> 0b481bdd4a1f1dd81049c006c5e88b7597f504b3
+
 		}
 
 		public function getArticle($id)

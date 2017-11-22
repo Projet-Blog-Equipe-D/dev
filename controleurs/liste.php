@@ -23,20 +23,5 @@
 		$aq = new ArticleQuery($bdd);
 		$liste = $aq->getListeArticles();
 		include_once "../vues/liste.php";
-
-<<<<<<< HEAD
-$aq = new ArticleQuery($bdd);
-$liste = $aq->getListeArticles();
-$titre = "salut";
-
-// $cat = new CategorieQuery($bdd);
-// $liste_categories = $cat->getLIsteCaterogies();
-=======
 	}
-
-	
-// $cat = new CategorieQuery($bdd);
-// $liste_categories = $cat->getLIsteCategories();
->>>>>>> 0b481bdd4a1f1dd81049c006c5e88b7597f504b3
-
 ?>
