@@ -40,5 +40,31 @@
 				return false ;
 			}
 		}
+		
+		public function isNameFree($name){
+			$req = $this->_bdd->prepare('SELECT * FROM users WHERE name = :name');
+			$req->execute(array('name' => $name));
+			$donnees = $req->fetch();
+
+			if ($donnees == false){
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		
+		public function isMailFree($mail){
+			$req = $this->_bdd->prepare('SELECT * FROM users WHERE mail = :mail');
+			$req->execute(array('mail' => $mail));
+			$donnees = $req->fetch();
+
+			if ($donnees == false){
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
 	}
 ?>

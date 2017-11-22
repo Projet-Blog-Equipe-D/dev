@@ -48,8 +48,17 @@
 									echo $_SESSION['loginErr'] ; 
 								echo '</p>';
 							}
+							if (isset($_SESSION['insSuccess'])){
+								echo '<p id="msgUser" class="alert alert-success">';
+									echo $_SESSION['insSuccess'] ; 
+								echo '</p>';
+								unset($_SESSION['insSuccess']);
+							}
+							else{
+								echo '<a href="inscription.php">Pas encore inscrit ?</a>';
+							}
 						?>
-						<a href="inscription.php">Pas encore inscrit ?</a>
+						
 					</div>
 				</div>
 			</div>		

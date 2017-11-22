@@ -29,6 +29,11 @@
 		// $user = new ClassUser($donnees);
 		$donnees = [];
 		unset($_SESSION['loginIns']);
+		$jean = new ClassUserQuery($bdd);
+		
+		$email = trim($_POST['login']);
+		$pseudo = utf8_decode(ucfirst(htmlspecialchars(trim($_POST['pseudo']))));
+		$mdp = MD5(htmlspecialchars($_POST['password']));
 		
 		if (empty($_POST['login'])){
 			$_SESSION['loginIns'] = "Choisissez un E-mail ! <br>";
@@ -37,31 +42,44 @@
 			$_SESSION['loginIns'] .= "E-mail incorrect. <br>";
 		}
 		else{
-			$donnees[] = $_POST['login'];
+			$donnees[] = $email;
 		}
 		
 		if (empty($_POST['password'])){
 			$_SESSION['loginIns'] .= "Vous avez oubliez votre mot de passe ! <br>";
 		}
 		else{
-			$donnees[] = MD5(htmlspecialchars($_POST['password']));
+			$donnees[] = $mdp;
 		}
 		
 		if (empty($_POST['pseudo'])){
 			$_SESSION['loginIns'] .= "Et votre pseudo ? <br>";
 		}
 		else{
-			$donnees[] = utf8_decode(ucfirst(htmlspecialchars($_POST['pseudo'])));
+			
+			$donnees[] = $pseudo;
 		}
 		
-		if ((!empty($_POST['login'])) && (!empty($_POST['password'])) && (!empty($_POST['pseudo']))) {
 			
-			$jean = new ClassUserQuery($bdd);
-			if ($jean->inscription($donnees)){
-				header('Location: ../vues/login.php');
+		if (!isset($_SESSION['loginIns'])){
+			if($jean->isMailFree($email)){
+				if ($jean->isNameFree($pseudo)){
+					if ($jean->inscription($donnees)){
+						$_SESSION['insSuccess'] = "Inscription réussie. Bienvenue !";
+						header('Location: ../vues/login.php');
+					}
+					else{
+						$_SESSION['loginIns'] = "Erreur lors de la requête";
+						header('Location: ../vues/inscription.php');
+					}
+				}
+				else{
+					$_SESSION['loginIns'] = "Pseudo déjà utilisé.";
+					header('Location: ../vues/inscription.php');
+				}
 			}
 			else{
-				$_SESSION['loginIns'] = "Erreur lors de la requête";
+				$_SESSION['loginIns'] = "E-mail déjà utilisé.";
 				header('Location: ../vues/inscription.php');
 			}
 		}
