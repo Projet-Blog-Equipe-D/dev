@@ -39,7 +39,9 @@
 		// var_dump($verifpage);
 		if ($verifpage == 0)
 		{
+			
 		   include_once "../inc/error404.php";
+
 		} else {
 		  
 			echo "<section class='container-fluid'>";
@@ -73,7 +75,7 @@
 							echo "</div>";
 
 						} else {
-							
+
 						}
 
 

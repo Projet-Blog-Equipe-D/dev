@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
 html, body, .nopad{
 	margin: 0;
 	padding: 0;
@@ -23,6 +25,21 @@ ol, ul{
 	margin-left: 0;
 	padding: 0;
 }
+
+/*.navbar-right
+{
+	width: 20%;
+}*/
+
+.navbar-right a li
+{
+	display: inline-block;
+}
+
+/*.addarticle
+{
+	padding-right: 5%;
+}*/
 
 @media screen and (min-width: 1024px){
 	ol, ul, .navbar-left {
@@ -162,4 +179,79 @@ main .container-fluid
 	{
 		padding: 5%;
 	}
+}
+
+
+
+
+
+
+
+
+
+/*AJOUT ARTICLE*/
+
+h1
+{
+	font-size: 3rem;
+	font-family: 'Raleway';
+	text-align: center;
+}
+
+.addtitre
+{
+	margin: auto;
+}
+
+.addcontenu
+{
+	margin: 2% auto 0 auto;
+	min-height: 12rem;
+	resize: vertical;
+}
+
+
+.addtitre, .addcontenu
+{
+	padding: 0.5%;
+	display: block;
+	width: 30%;
+	font-size: 1.5rem;
+	border-radius: 5px;
+	color: #000;
+	font-family: 'Raleway';
+	transition: border ease-in-out .3s;
+}
+
+.addtitre:focus, .addcontenu:focus { 
+    outline: none !important;
+    border: 2px solid #AA1819;
+    box-shadow: 0 0 10px #AA1819;
+}
+
+.enregistrer
+{
+	display: block;
+	margin: 2% auto 0 auto;
+}
+
+@media screen and (max-width: 1024px){
+
+	h1
+	{
+		font-size: 2rem;
+	}
+
+	.addtitre, .addcontenu
+	{
+		width: 80%;
+		font-size: 1rem;
+		padding: 1%;
+	}
+
+	.addcontenu
+	{
+		margin: 5% auto 0 auto;
+	}
+
 }
