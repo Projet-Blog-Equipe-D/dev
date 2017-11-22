@@ -5,6 +5,7 @@
 	require_once('../inc/classArticleQuery.php');
 	session_start();
 	include_once "../inc/pdo.php";
+	include_once "../inc/navviewarticle.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,6 +17,7 @@
 		<!-- Importation BootStrap 3 -->
 		<link href="../css/bootstrap.min.css" rel="stylesheet">
 		
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
 		<link rel="stylesheet" type="text/css" href="../css/viewarticle.css">
 		
 		
@@ -62,11 +64,19 @@
 
 				echo "</div>";
 
-				echo "<div class='pull-right'>";
-						echo '<button class="btn btn-primary edit">Modifier</button>';
-						echo '<button class="btn btn-success valid" art="'.$liste->getIdArticle().'">Valider</button>';
-						echo '<button class="btn btn-danger delete" art="'.$liste->getIdArticle().'">Supprimer</button>';
-				echo "</div>";
+						if (isset($_SESSION['user'])) {
+							
+							echo "<div class='pull-right'>";
+									echo '<button class="btn btn-primary edit">Modifier</button>';
+									echo '<button class="btn btn-success valid" art="'.$liste->getIdArticle().'">Valider</button>';
+									echo '<button class="btn btn-danger delete" art="'.$liste->getIdArticle().'">Supprimer</button>';
+							echo "</div>";
+
+						} else {
+							
+						}
+
+
 
 
 			echo "</section>";
