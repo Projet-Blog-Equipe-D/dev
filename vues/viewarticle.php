@@ -27,37 +27,54 @@
 <main>
 	<?php
 
-		$aq = new ArticleQuery($pdo);
+		$aq = new ArticleQuery($bdd);
 		$liste = $aq->getArticle($_GET['id']);
 
-		echo "<section class='container-fluid'>";
-					echo "<div class='row'>";
+		$query = $bdd->query("SELECT * FROM articles WHERE id_article ='".$_GET['id']."'");
 
-						echo "<div class='col-md-12 col-xs-12 col-lg-12 col-sm-12 text-center'>";
-							echo "<img src='http://via.placeholder.com/1200x500' alt='Image article'>";
-						echo "</div>";
+		$verifpage = $query->rowCount();
+
+		// var_dump($verifpage);
+		if ($verifpage == 0)
+		{
+		   include_once "../inc/error404.php";
+		} else {
+		  
+			echo "<section class='container-fluid'>";
+				echo "<div class='row'>";
+
+					echo "<div class='col-md-12 col-xs-12 col-lg-12 col-sm-12 text-center'>";
+						echo "<img src='http://via.placeholder.com/1200x500' alt='Image article'>";
+					echo "</div>";
+
+				echo "</div>";
+
+				echo "<div class='row'>";
+
+					echo "<div class='col-md-12 col-xs-12 col-lg-12 col-sm-12'>";
+						// echo "<h1>".$titre."</h1>";
+						echo '<article class="article" id="article-'.$liste->getIdArticle().'">';
+							echo utf8_encode("<h2 name='titre' class='contentedit'>".$liste->getTitre()."</h2>");
+							echo utf8_encode("<p class='contentedit' contenteditable='false' name='texte'>".$liste->getContenu()."</p>");
+						echo "</article>";
 
 					echo "</div>";
 
-					echo "<div class='row'>";
+				echo "</div>";
 
-						echo "<div class='col-md-12 col-xs-12 col-lg-12 col-sm-12'>";
-							// echo "<h1>".$titre."</h1>";
-							echo '<article class="article" id="article-'.$liste->getIdArticle().'">';
-								echo utf8_encode("<h2>".$liste->getTitre()."</h2>");
-								echo utf8_encode("<p>".$liste->getContenu()."</p>");
-							echo "</article>";
+				echo "<div class='pull-right'>";
+						echo '<button class="btn btn-primary edit">Modifier</button>';
+						echo '<button class="btn btn-success valid" art="'.$liste->getIdArticle().'">Valider</button>';
+						echo '<button class="btn btn-danger delete" art="'.$liste->getIdArticle().'">Supprimer</button>';
+				echo "</div>";
 
-						echo "</div>";
 
-					echo "</div>";
-
-					echo "<div class='pull-right'>";
-							echo '<a href="vues/deletearticle.php?id='.$liste->getIdArticle().'">'.'<button class="btn btn-danger">Supprimer</button>'.'</a>';
-							echo '<a href="vues/editarticle.php?id='.$liste->getIdArticle().'">'.'<button class="btn btn-primary">Modifier</button>'.'</a>';
-					echo "</div>";
-
-				echo "</section>";
+			echo "</section>";
+		}
 		
 	?>
+	<div id="affichage"></div>
 </main>
+
+<script type="text/javascript" src="../js/editarticle.js"></script>
+<script type="text/javascript" src="../js/deletearticle.js"></script>

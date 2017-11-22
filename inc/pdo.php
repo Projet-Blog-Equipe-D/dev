@@ -10,7 +10,7 @@
 			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 			PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
 		);
-		$pdo = new PDO(
+		$bdd = new PDO(
 			$db_config['SGBD'] .':host='. $db_config['HOST'] .';dbname='. $db_config['DB_NAME'],
 			$db_config['USER'],
 			$db_config['PASSWORD'],

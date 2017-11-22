@@ -26,18 +26,23 @@ main .container-fluid
 h2
 {
 	font-size: 4rem;
-	font-size: 'Raleway';
+	font-family: 'Raleway';
 }
 
 p
 {
 	font-size: 2.5rem;
-	font-size: 'Raleway';
+	font-family: 'Raleway';
 }
 
 .article
 {
 	color: #fff;
+}
+
+.valid
+{
+	display: none;
 }
 
 /*.bouton-lire

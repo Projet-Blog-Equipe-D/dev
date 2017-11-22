@@ -26,7 +26,7 @@
 
 	
 	if (!empty($_POST)){
-		$michel = new ClassUserQuery($pdo);
+		$michel = new ClassUserQuery($bdd);
 		if ($michel->connexion($_POST['login'],$_POST['password'])){
 			header('Location: ../index.php');
 		}

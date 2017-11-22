@@ -1,6 +1,6 @@
 <main>
 	<?php
-		foreach ($liste as $art) {
+		foreach ($liste as $art) {//Chaque element de ma liste devient $art
 			echo "<section class='container-fluid'>";
 				echo "<div class='row'>";
 
