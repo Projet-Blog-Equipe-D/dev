@@ -2,7 +2,6 @@
 
 	class ArticleQuery
 	{
-
 	 	private $_bdd;
 
 	 	public function __construct($bdd)
