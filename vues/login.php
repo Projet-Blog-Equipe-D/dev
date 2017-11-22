@@ -42,10 +42,23 @@
 							</p>
 							<button type="submit" class="btn btn-login" id="validation">Se connecter</button>
 						</form>
-						<div id="msgUser">
-							<?php if (isset($msgUser)){echo $msgUser ;} ?>
-						</div>
-						<a href="inscription.php">Pas encore inscrit ?</a>
+						<?php
+							if (isset($_SESSION['loginErr'])){
+								echo '<p id="msgUser" class="alert alert-danger">';
+									echo $_SESSION['loginErr'] ; 
+								echo '</p>';
+							}
+							if (isset($_SESSION['insSuccess'])){
+								echo '<p id="msgUser" class="alert alert-success">';
+									echo $_SESSION['insSuccess'] ; 
+								echo '</p>';
+								unset($_SESSION['insSuccess']);
+							}
+							else{
+								echo '<a href="inscription.php">Pas encore inscrit ?</a>';
+							}
+						?>
+						
 					</div>
 				</div>
 			</div>		

@@ -43,9 +43,13 @@
 							</p>
 							<button type="submit" class="btn btn-login" id="validation">S'inscrire</button>
 						</form>
-						<div id="msgUser">
-							<?php if (isset($msgUser)){echo $msgUser ;} ?>
-						</div>
+						<?php
+							if (isset($_SESSION['loginIns'])){
+								echo '<p id="msgUser" class="alert alert-danger">';
+									echo $_SESSION['loginIns'] ; 
+								echo '</p>';
+							}
+						?>
 					</div>
 				</div>
 			</div>		

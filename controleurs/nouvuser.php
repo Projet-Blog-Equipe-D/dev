@@ -28,23 +28,63 @@
 	if (!empty($_POST)){
 		// $user = new ClassUser($donnees);
 		$donnees = [];
-		if (!empty($_POST['login']) && preg_match("/^[a-zA-Z0-9._-]+@[a-z0-9_-]+\.[a-z]{2,6}$/", $_POST['login'])){
-			$donnees[] = $_POST['login'];
+		unset($_SESSION['loginIns']);
+		$jean = new ClassUserQuery($bdd);
+		
+		$email = trim($_POST['login']);
+		$pseudo = utf8_decode(ucfirst(htmlspecialchars(trim($_POST['pseudo']))));
+		$mdp = MD5(htmlspecialchars($_POST['password']));
+		
+		if (empty($_POST['login'])){
+			$_SESSION['loginIns'] = "Choisissez un E-mail ! <br>";
 		}
-		if (!empty($_POST['password'])){
-			$donnees[] = MD5(htmlspecialchars($_POST['password']));
+		elseif(!preg_match("/^[a-zA-Z0-9._-]+@[a-z0-9_-]+\.[a-z]{2,6}$/", $_POST['login'])){
+			$_SESSION['loginIns'] .= "E-mail incorrect. <br>";
 		}
-		if (!empty($_POST['pseudo'])){
-			$donnees[] = utf8_decode(ucfirst(htmlspecialchars($_POST['pseudo'])));
+		else{
+			$donnees[] = $email;
 		}
-		if (!empty($donnees)){
-			$jean = new ClassUserQuery($bdd);
-			if ($jean->inscription($donnees)){
-				header('Location: ../vues/login.php');
+		
+		if (empty($_POST['password'])){
+			$_SESSION['loginIns'] .= "Vous avez oubliez votre mot de passe ! <br>";
+		}
+		else{
+			$donnees[] = $mdp;
+		}
+		
+		if (empty($_POST['pseudo'])){
+			$_SESSION['loginIns'] .= "Et votre pseudo ? <br>";
+		}
+		else{
+			
+			$donnees[] = $pseudo;
+		}
+		
+			
+		if (!isset($_SESSION['loginIns'])){
+			if($jean->isMailFree($email)){
+				if ($jean->isNameFree($pseudo)){
+					if ($jean->inscription($donnees)){
+						$_SESSION['insSuccess'] = "Inscription réussie. Bienvenue !";
+						header('Location: ../vues/login.php');
+					}
+					else{
+						$_SESSION['loginIns'] = "Erreur lors de la requête";
+						header('Location: ../vues/inscription.php');
+					}
+				}
+				else{
+					$_SESSION['loginIns'] = "Pseudo déjà utilisé.";
+					header('Location: ../vues/inscription.php');
+				}
 			}
 			else{
+				$_SESSION['loginIns'] = "E-mail déjà utilisé.";
 				header('Location: ../vues/inscription.php');
 			}
+		}
+		else{
+			header('Location: ../vues/inscription.php');
 		}
 	}
 []

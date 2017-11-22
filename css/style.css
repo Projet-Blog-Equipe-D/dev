@@ -100,6 +100,7 @@ ol, ul{
 #logination input{
 	transition: all 0.5s ease;
 }
+
 #logination form{
 	margin-bottom: 25px;
 }
@@ -139,6 +140,18 @@ ol, ul{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media screen and (min-width: 720px){
+	.nopad .row{
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 720px){
+	.nopad .row{
+		width: 80%;
+	}
 }
 
 /*CSS ARTICLE*/
