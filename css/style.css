@@ -248,6 +248,29 @@ h1
 	margin: 2% auto 0 auto;
 }
 
+.addcategorie
+{
+	display: block;
+	margin: 3% auto 0 auto;
+}
+
+#success
+{
+	color: #00ff00;
+	font-size: 3rem;
+	text-align: center;
+	margin-top: 3%;
+}
+
+#error
+{
+	color: #ff0000;
+	font-size: 3rem;
+	text-align: center;
+	margin-top: 3%;
+}
+
+
 @media screen and (max-width: 1024px){
 
 	h1

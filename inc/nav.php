@@ -28,7 +28,7 @@
 						echo '<a href="vues/login.php"><li><i class="fa fa-sign-in" aria-hidden="true"></i>CONNEXION</li></a>';
 					}
 					else{
-						echo '<a href="vues/addarticle.php" class="addarticle"><li>AJOUTER UN ARTICLE</li></a>';
+						echo '<a href="vues/article.php" class="addarticle"><li>AJOUTER UN ARTICLE</li></a>';
 						echo '<a href="controleurs/deconnexion.php"><li><i class="fa fa-sign-out" aria-hidden="true"></i>DECONNEXION</li></a>';
 					}
 				?>
