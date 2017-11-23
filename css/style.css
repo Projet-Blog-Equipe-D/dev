@@ -31,9 +31,10 @@ ol, ul{
 	width: 20%;
 }*/
 
-.navbar-right a li
+ul li
 {
 	display: inline-block;
+	margin-left: 15px;
 }
 
 /*.addarticle
@@ -84,7 +85,6 @@ ol, ul{
 		box-shadow: none;
 	}
 }
-
 /* *** Connexion *** */
 
 #logination{
