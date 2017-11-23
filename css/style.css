@@ -12,6 +12,10 @@ body{
 	padding: 3%;
 }
 
+h2{
+	margin-bottom: 20px;
+}
+
 img
 {
 	max-width: 100%;
