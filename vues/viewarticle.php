@@ -45,7 +45,7 @@
 		if ($verifpage == 0)
 		{
 			
-		   include_once "../inc/error404.php";
+		   header('Location: ../inc/error404.php');
 
 		} else {
 		  
