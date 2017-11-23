@@ -20,21 +20,13 @@
 		
 		
 	);
-<<<<<<< HEAD
 	
 	if ($_POST['titre'] && $_POST['contenu']){
 		$aq->ajoutArticle($art);
 		echo "<p id='success'>L'article à bien été enregistrer !</p>";
-=======
-
-	// var_dump($art);
-	if ($aq->ajoutArticle($art)) {
-		echo "<p id='success'>L'article à bien été enregistré !</p>";
->>>>>>> cdbd36376442f4222eb1f5e866f2bd87dd6320af
 	} else {
 		echo "<p id='error'>Impossible d'enregistrer l'article !</p>";
 		
 	}
-
 
 ?>
