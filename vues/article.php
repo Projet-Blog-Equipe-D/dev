@@ -44,7 +44,6 @@
 					$categs = $choux->getList();
 					echo "<select name='choix' class='addcategorie' id='choix'>";
 					foreach ($categs as $value) {
-						var_dump($value);	
 						echo "<option value=".$value['id_categorie'].">".$value['nom']."</option>";
 					}
 					echo"</select>";

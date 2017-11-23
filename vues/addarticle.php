@@ -16,11 +16,14 @@
 		utf8_decode($_POST['contenu']),
 		utf8_decode($_POST['categorie']),
 		$_SESSION["user"]->getUserId()
-
+		
+		
+		
 	);
 
+	// var_dump($art);
 	if ($aq->ajoutArticle($art)) {
-		echo "<p id='success'>L'article à bien été enregistrer !</p>";
+		echo "<p id='success'>L'article à bien été enregistré !</p>";
 	} else {
 		echo "<p id='error'>Impossible d'enregistrer l'article !</p>";
 	}
