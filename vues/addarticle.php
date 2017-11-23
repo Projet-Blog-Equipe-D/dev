@@ -17,8 +17,6 @@
 		utf8_decode($_POST['categorie']),
 		$_SESSION["user"]->getUserId()
 		
-		
-		
 	);
 	
 	if ($_POST['titre'] && $_POST['contenu']){
