@@ -9,9 +9,20 @@
 	$aq = new ArticleQuery($bdd);
 	$art = $aq->getArticle($_POST['id']);
 
-	$art->setTitre(utf8_decode($_POST['titre']));
-	$art->setContenu(utf8_decode($_POST['contenu']));
+	if (isset($_SESSION['user'])){
+		if (($art->getAuteur()) == ($_SESSION["user"]->getUserId())){
+			$art->setTitre(utf8_decode($_POST['titre']));
+			$art->setContenu(utf8_decode($_POST['contenu']));
 
-	$aq->modifierArticle($art);
+			$aq->modifierArticle($art);
+
+		}
+		else{
+			echo '<p class="alert alert-danger">Vous n\'avez pas les permissions nécessaires.</p>';
+		}
+	}
+	else{
+		echo '<p class="alert alert-danger">Vous devez être connecté pour modifier un article.</p>';
+	}
 
 ?>

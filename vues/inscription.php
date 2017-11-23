@@ -29,7 +29,7 @@
 		<div class="container-fluid vertical-center">
 			<div class="row">
 				<div class="col-md-12 text-center">
-				<h1> <?php if (isset($_SESSION['user'])){var_dump($_SESSION["user"]->getMail());}  ?></h1>
+				<h1> <?php if (isset($_SESSION['user'])){echo $_SESSION["user"]->getMail();}  ?></h1>
 					<div id="logination" class="">
 						<form method="POST" action="../controleurs/nouvuser.php">
 							<p>

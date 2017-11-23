@@ -21,15 +21,12 @@ $(document).ready(function(){
 		$(this).closest('section').find('.contentedit').attr('contenteditable','false');
 		$(this).closest('section').find('.contentedit').css('color','black');
 		// appel ajax pour enregistrer la ligne
-		var donnees = "id="+$(this).attr('art'); //RECUPERER ID ARTICLE
+		var donnees = "id="+$(this).attr('art');
 		var vars = ["titre","contenu"];
 
 		$(this).closest('section').find('.contentedit').each(function(index){
 			donnees += "&"+vars[index]+"="+$(this).text();
 		});
-
-		console.log(donnees);
-		//envoi ajax
 
 
 		$.ajax({
