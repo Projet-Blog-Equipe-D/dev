@@ -55,6 +55,19 @@
 			}
 		}
 		
+		public function getUser($id){
+			$req = $this->_bdd->prepare('SELECT name FROM users WHERE id_user = :id_user');
+			$req->execute(array('id_user' => $id));
+			$donnees = $req->fetch();
+			
+			if ($donnees != false){
+				return $donnees;
+			}
+			else {
+				return false;
+			}
+		}
+		
 		public function isNameFree($name){
 			$req = $this->_bdd->prepare('SELECT * FROM users WHERE name = :name');
 			$req->execute(array('name' => $name));

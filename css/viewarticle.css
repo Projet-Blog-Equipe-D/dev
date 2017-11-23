@@ -44,7 +44,10 @@ p
 {
 	display: none;
 }
-
+#auteurarticle{
+	margin-top: 20px;
+	font-size: 1rem;
+}
 /*.bouton-lire
 {
 	color: #111;

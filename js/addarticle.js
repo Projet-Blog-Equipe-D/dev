@@ -6,7 +6,7 @@ $(document).ready(function(){
 		var contenu = $('.addcontenu').val();
 		var categorie = $('.addcategorie').val();
 
-		var donnees = "titre=" + titre + "&contenu=" + contenu + "&categorie=" + categorie;
+		var donnees = "titre=" + titre + "&contenu=" + contenu + "&auteur=NULL" + "&categorie=" + categorie;
 		$.ajax({
 			url: "../vues/addarticle.php",
 			type: 'POST',

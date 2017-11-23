@@ -28,12 +28,17 @@
 
 <main>
 	<?php
-
 		$aq = new ArticleQuery($bdd);
 		$liste = $aq->getArticle($_GET['id']);
-
+		
+		$quser = new classUserQuery($bdd);
+		$uzer = $quser->getUser($liste->getAuteur());
+		
+		if ($uzer == false){
+			$uzer['name'] = "Inconnu";
+		}
+		
 		$query = $bdd->query("SELECT * FROM articles WHERE id_article ='".$_GET['id']."'");
-
 		$verifpage = $query->rowCount();
 
 		// var_dump($verifpage);
@@ -61,7 +66,8 @@
 							echo utf8_encode("<h2 name='titre' class='contentedit'>".$liste->getTitre()."</h2>");
 							echo utf8_encode("<p class='contentedit' contenteditable='false' name='texte'>".$liste->getContenu()."</p>");
 						echo "</article>";
-
+						echo "<p id='auteurarticle'> Auteur : ".$uzer['name']."</p>";
+						
 					echo "</div>";
 
 				echo "</div>";
