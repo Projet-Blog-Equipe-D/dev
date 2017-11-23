@@ -14,7 +14,7 @@ $(document).ready(function(){
 			dataType: 'html',
 			success: function(retour){
 				$('#affichage').html(retour);
-				window.location.href = "../index.php";
+				// window.location.href = "../index.php";
 			},
 			error: function(retour, statut){
 				$('#affichage').html('erreur appel ajax' + 'code retour = ' + retour + 'statut = ' + statut);

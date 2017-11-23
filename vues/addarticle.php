@@ -18,11 +18,13 @@
 		$_SESSION["user"]->getUserId()
 
 	);
-
-	if ($aq->ajoutArticle($art)) {
+	
+	if ($_POST['titre'] && $_POST['contenu']){
+		$aq->ajoutArticle($art);
 		echo "<p id='success'>L'article à bien été enregistrer !</p>";
 	} else {
 		echo "<p id='error'>Impossible d'enregistrer l'article !</p>";
+		
 	}
 
 
